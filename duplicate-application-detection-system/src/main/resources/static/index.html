@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duplicate Application Detection System</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div>
+            <h1>🛡️ Duplicate Application Detection System</h1>
+            <p>Intelligent Duplicate Application Detection System Using Java and Spring Boot</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="stats">
+            <div class="stat-card">
+                <h3>Total Applications</h3>
+                <p id="totalApplications">0</p>
+            </div>
+            <div class="stat-card">
+                <h3>Duplicate Reports</h3>
+                <p id="totalDuplicates">0</p>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Register Application</h2>
+
+            <form id="applicationForm">
+                <label for="name">Full Name</label>
+                <input id="name" name="name" type="text"
+                       placeholder="Enter full name" required>
+
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email"
+                       placeholder="Enter email" required>
+
+                <label for="phone">Phone Number</label>
+                <input id="phone" name="phone" type="tel"
+                       pattern="[0-9]{10}"
+                       title="Enter a 10-digit phone number"
+                       placeholder="Enter 10-digit phone number"
+                       required>
+
+                <button type="submit">Register Application</button>
+            </form>
+
+            <p id="message" role="status"></p>
+        </section>
+
+        <section class="panel">
+            <div class="section-heading">
+                <h2>All Applications</h2>
+                <button type="button" class="secondary"
+                        id="refreshApplications">Refresh</button>
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                        </tr>
+                    </thead>
+                    <tbody id="applicationsTable"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="panel">
+            <div class="section-heading">
+                <h2>Duplicate Detection Reports</h2>
+                <button type="button" class="secondary"
+                        id="refreshDuplicates">Refresh</button>
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Report ID</th>
+                            <th>Existing App ID</th>
+                            <th>Submitted Name</th>
+                            <th>Match Reason</th>
+                            <th>Similarity</th>
+                            <th>Detected At</th>
+                        </tr>
+                    </thead>
+                    <tbody id="duplicatesTable"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Duplicate Application Detection System | Java · Spring Boot · REST APIs . PostgreSQL</p>
+    </footer>
+</body>
+</html>
